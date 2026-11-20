@@ -1,0 +1,116 @@
+/* Full page background */
+/* Full page background */
+.login-page {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #e0f2ff, #cce8ff);
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  padding: 20px;           /* for small screen breathing room */
+  box-sizing: border-box;
+}
+
+
+/* Frosted glass card */
+.login-form {
+  background: rgba(246, 246, 252, 0.12);
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(45, 78, 223, 0.25);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(12px);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1568c7;
+}
+
+/* Heading */
+.login-form h2 {
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* Input fields */
+.login-form input {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #1568c7;
+}
+
+.login-form input::placeholder {
+  color: #555;
+}
+
+/* Error message */
+.error-msg {
+  color: #ffc107;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Stylish button with curtain animation */
+.login-button {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 14px;
+  background-color: #1568c7;       /* Base (inside) color */
+  color: #ecf2f8;                  /* Text color */
+   /* Border (outside color) */
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.4s ease;
+  z-index: 1;
+}
+
+/* Left and right curtains */
+.login-button::before,
+.login-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background: #4496f3;           /* Curtain color */
+  z-index: -1;
+  transition: all 0.4s ease;
+}
+
+/* Left curtain */
+.login-button::before {
+  left: -50%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* Right curtain */
+.login-button::after {
+  right: -50%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* On hover: sweep both curtains inward */
+.login-button:hover::before {
+  left: 0;
+}
+
+.login-button:hover::after {
+  right: 0;
+}
+
+/* Change text color after sweep */
+.login-button:hover {
+  color: #fff;
+}
